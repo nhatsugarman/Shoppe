@@ -1,0 +1,334 @@
+@import "./variable.less";
+@import "./mixin.less";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+// common
+.app {
+    width: 414px;
+    position: relative;
+    @media @destop {
+        width: 100%;
+    }
+}
+
+.column {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 25%;
+}
+.row1 {
+    display: flex;
+    overflow-x: scroll;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.row2 {
+    display: flex;
+    margin-left: -10px;
+    margin-right: -10px;
+    overflow-x: scroll;
+}
+.row {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main {
+    width: 374px;
+    margin: auto;
+}
+
+// HEADER
+.header {
+    position: relative;
+    min-height: 99.33px;
+    background: url(./img/Rectangle\ 2.svg);
+    @media @destop {
+        height: 68px;
+    }
+    .header__navbar {
+        position: absolute;
+        width: 100%;
+        list-style: none;
+        top: 50%;
+        .flex (space-between);
+        .header__navbar-input {
+            position: relative;
+            input {
+                padding: 12.5px 30px 12.5px 20px;
+                outline: none;
+                color: #333333;     
+                border: 1px solid #E5E5E5;
+                border-radius: 20px;
+                .font-style (@color__very-dark-gray, @font__size-medium, @line__height-normal, @font__weight-lighter-bold, 0em);
+                text-align: left;     
+            }
+            img {
+                position: absolute;
+                top: 50%;
+                right: 10.5px;
+                transform: translateY(-50%);
+            }
+        }
+        .header__navbar-cart {
+            position: relative;
+            .navbar-cart__number {
+                position: absolute;
+                right: -16px;
+                top: 10%;
+            }
+        }
+    }
+}
+// SLIDER
+.slider {
+    min-height: 140px;
+    margin-top: 11.67px;
+    position: relative;
+    background: url(./img/slider.svg) no-repeat top center / cover;
+    &::before {
+        position: absolute;
+        height: 8.97px;
+        width: 100%;
+        content: "";
+        display: block;
+        top: -6%;
+        background: #F99B2A;
+    }
+    .slider__number {
+        position: absolute;
+        right: 9.5px;
+        bottom: 10px;
+        width: 38px;
+        height: 23px;
+        border-radius: 20px;
+        background-color: #fff;
+        .flex;
+        h2 {
+            .font-style (@color__very-dark-gray,@font__size-medium, @line__height-normal, @font__weight-lighter-bold, @letter__spacing-primary)
+        }
+    }
+}
+
+// Category
+.category {
+    margin: 20px auto 23px auto;
+    .category__medal {
+        h3 {
+            .font-style (@color__very-dark-gray,@font__size-primary, @line__height-s-normal, @font__weight-lighter-bold, @letter__spacing-primary)
+        }
+    }
+}
+// List prodcuct
+.list {
+    margin-bottom: 40px;
+    .list__header {
+        border-bottom: 0.5px solid @color__bright-orange;
+        text-align: center;
+        h3 {
+            display: inline-block;
+            .font-style (@color__black, @font__size-lager, @line__height-biger, @font__weight-bold, @letter__spacing-primary);
+            margin: auto;
+            padding-bottom: 10px;
+            border-bottom: 3px solid @color__bright-red;
+        }
+    }
+    .list__content {
+        display: grid;
+        align-items: flex-end;
+        margin-top: 23px;
+        .list__content-img {
+            img {
+                width: 170px;
+                height: 160px;
+            }
+        }
+        .list__content-content {
+            margin-top: 10px;
+            h3 {
+                .font-style (@color__black, @font__size-medium, @line__height-x-normal, @font__weight-bold, @letter__spacing-primary);
+            }
+            p {
+                margin-top: 12px;
+                .font-style (@color__bright-red, @font__size-medium, @line__height-x-normal, @font__weight-bold, @letter__spacing-primary);
+            }
+        }
+    }
+    .list__footer {
+        position: relative;
+        margin-top: 20px;
+        text-align: center;
+        button {
+            .button__format;           
+            .font-style (@color__bright-red, @font__size-lager, @line__height-biger, @font__weight-bold, @letter__spacing-primary);
+        }
+        &.list__footer--bright-red {
+            button {
+                .button__format(@color__white, @color__bright-red, none);
+            }
+        }
+        img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 25%;
+        }
+    }
+}
+
+// BANNER
+.banner {
+    height: 140px;
+    margin-bottom: 20px;
+}
+// Dich vu thanh toan
+.list__header-item {
+    img {
+        width: 87.33px;
+    }
+    h3 {
+        .font-style (@color__very-dark-gray,@font__size-primary, @line__height-s-normal, @font__weight-lighter-bold, @letter__spacing-primary)
+    }
+}
+// Social
+.social {
+    background: @color__white;
+    .social__link {
+        display: flex;
+        justify-content: center;
+        a {
+            padding-left: 10px;
+        }
+    }
+    .social__confirm {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        input {
+            padding: 12.5px 30px 12.5px 20px;
+            outline: none;
+            color: #333333;     
+            border: 1px solid #E5E5E5;
+            border-radius: 20px;
+            .font-style (@color__very-dark-gray, @font__size-medium, @line__height-normal, @font__weight-lighter-bold, 0em);
+            text-align: left;   
+        }
+        button {
+            .button__format(@color__white, @color__bright-red, none);
+        }
+        
+    }
+}
+// Cirlek
+.cirlek {
+    margin-top: 14.67px;
+    h3 {
+        font-style: italic;
+        .font-style (@color__bright-red, @font__size-lager, @line__height-biger, @font__weight-extra-bold, 0em);
+        span {
+            .font-style (@color__bright-red, @font__size-lager, @line__height-biger, @font__weight-bold, 0em);
+
+        }
+    }
+}
+// FOOTER
+.footer {
+    h4 {
+        margin-top: 13.33px;
+        margin-right: 49px;
+        .font-style (@color__very-dark-gray, @font__size-primary, @line__height-xs-normal, @font__weight-primary, 0em);
+        text-align: left;
+    }
+    .footer__qr {
+        margin-top: 23.67px;
+        display: flex;
+        align-items: flex-end;
+        border-bottom: 0.5px solid #9A9A9C;
+        padding-bottom: 20px;
+        .footer__qr-media {
+            width: 91px;
+            margin-left: 10px;
+        }
+        .footer__qr-bo {
+            margin-left: 20px;
+        }
+    }
+    .footer__info {
+        margin-top: 21.5px;
+        .footer__info-item {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin-bottom: 53.13px;
+            li {
+                padding: 9px 10px;
+                position: relative;
+                .font-style (@color__very-dark-gray, @font__size-primary, @line__height-smaller, @font__weight-primary, 0em);
+                text-align: left;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    border-left: 0.5px solid #9A9A9C;
+                    height: 15px;
+                    background: #000;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
+// NAVBAR
+.nav__call {
+    width: 374px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    bottom: 104px;
+    .nav__phone {
+        right: 0;
+        display: grid;
+        grid-gap: 20px;
+    }
+}
+.nav__login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 0 32px;
+    height: 60px;
+    width: 414px;
+    position: fixed;
+    z-index: 1;
+    bottom: 10px;
+    .nav__login-find {
+        li {
+            text-align: center;
+            display: inline-block;
+            h4 {
+                .font-style(@color__very-dark-gray, @font__size-small, @line__height-small, @font__weight-bold, 0em);
+            }
+        }
+    }
+    .nav__login-find {
+        li+li {
+            margin-left: 30px;
+        }
+    }
+    .nav__login-home {
+        position: absolute;
+        right: 50%;
+        transform: translate(50%);
+        bottom: 10px;
+    }
+}

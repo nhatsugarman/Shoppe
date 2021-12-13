@@ -1,0 +1,50 @@
+@import "./variable.less";
+
+.grid__background {
+    width: 374px;
+    max-width: 100%;
+    margin: 0 auto;
+    @media @destop {
+        width: 1440px;
+    }
+    
+}
+
+
+// Display:flex
+
+.flex (@justify:center) {
+    display: flex;
+    justify-content: @justify;
+    align-items: center;
+}
+// Display:grid
+.grid(@grid__columns:3, @grid__gap:@font__size-double-lager) {
+    display: grid;
+    grid-template-columns: repeat(@grid__columns,1fr);
+    grid-gap: @grid__gap;
+    align-items: center;
+}
+// Format for font-style 
+.font-style (@color:@color__primary  ,@size:@font__size-primary,@line__height:@line__height-normal , @font__weight:@font__weight-lighter-bold, @letter__spacing: @letter__spacing-m) {
+    color: @color;
+    font-size:@size;
+    line-height: @line__height;
+    font-weight: @font__weight;
+    letter-spacing: @letter__spacing;
+    text-align: center;
+}
+// Format-button
+.button__format (@color:@color__bright-red, @background: @color__white, @border: 1px solid @color__bright-red) {
+    outline: none;
+    border: @border;
+    border-radius: 20px;
+    color: @color;
+    background: @background;
+    border-radius: 20px;
+    padding: 11.5px 44.14px 11.5px 30px;
+    &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+}
